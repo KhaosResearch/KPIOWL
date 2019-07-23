@@ -1,0 +1,894 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY KPIOWL "http://khaos.uma.es/ontologies/lucentia/KPIOWL#" >
+    <!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://khaos.uma.es/ontologies/lucentia/KPIOWL#"
+     xml:base="http://khaos.uma.es/ontologies/lucentia/KPIOWL#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:KPIOWL="http://khaos.uma.es/ontologies/lucentia/KPIOWL#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://khaos.uma.es/ontologies/lucentia/KPIOWL#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="&swrla;isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##goalDirect -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;goalDirect">
+        <rdfs:domain rdf:resource="&KPIOWL;Contribution"/>
+        <rdfs:range rdf:resource="&KPIOWL;Goal"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##goalReverse -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;goalReverse">
+        <rdfs:domain rdf:resource="&KPIOWL;Contribution"/>
+        <rdfs:range rdf:resource="&KPIOWL;Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##hasRelationship -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;hasRelationship">
+        <rdfs:domain rdf:resource="&KPIOWL;Goal"/>
+        <rdfs:range rdf:resource="&KPIOWL;Relationship"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##inconsistent -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;inconsistent">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&KPIOWL;Indicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##indicatorDirect -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;indicatorDirect">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&KPIOWL;Indicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##indicatorReverse -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;indicatorReverse">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##monitoredBy -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;monitoredBy">
+        <owl:inverseOf rdf:resource="&KPIOWL;monitors"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##monitors -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;monitors">
+        <rdfs:range rdf:resource="&KPIOWL;Goal"/>
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##redundant -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;redundant">
+        <rdfs:range rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##withGoal -->
+
+    <owl:ObjectProperty rdf:about="&KPIOWL;withGoal">
+        <rdfs:domain rdf:resource="&KPIOWL;Decomposition"/>
+        <rdfs:range rdf:resource="&KPIOWL;Goal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##aim -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;aim">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>maintain</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>maximize</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>minimize</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##currentValue -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;currentValue">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##evidence -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;evidence">
+        <rdfs:domain rdf:resource="&KPIOWL;Relationship"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##formula -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;formula">
+        <rdfs:domain rdf:resource="&KPIOWL;Contribution"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##name -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;name">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&KPIOWL;Goal"/>
+                    <rdf:Description rdf:about="&KPIOWL;Indicator"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##status -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;status">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##targetTime -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;targetTime">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##targetValue -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;targetValue">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##threshold -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;threshold">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##type -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;type">
+        <rdfs:domain rdf:resource="&KPIOWL;Decomposition"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##value -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;value">
+        <rdfs:domain rdf:resource="&KPIOWL;Contribution"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##worstValue -->
+
+    <owl:DatatypeProperty rdf:about="&KPIOWL;worstValue">
+        <rdfs:domain rdf:resource="&KPIOWL;Indicator"/>
+        <rdfs:range rdf:resource="&xsd;double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##ConnectionNetwork -->
+
+    <owl:Class rdf:about="&KPIOWL;ConnectionNetwork">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Measure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##Contribution -->
+
+    <owl:Class rdf:about="&KPIOWL;Contribution">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Relationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##Decomposition -->
+
+    <owl:Class rdf:about="&KPIOWL;Decomposition">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Relationship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##DistributionNetwork -->
+
+    <owl:Class rdf:about="&KPIOWL;DistributionNetwork">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Measure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##Goal -->
+
+    <owl:Class rdf:about="&KPIOWL;Goal"/>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##Indicator -->
+
+    <owl:Class rdf:about="&KPIOWL;Indicator"/>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##KPI -->
+
+    <owl:Class rdf:about="&KPIOWL;KPI">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Indicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##KRI -->
+
+    <owl:Class rdf:about="&KPIOWL;KRI">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Indicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##Measure -->
+
+    <owl:Class rdf:about="&KPIOWL;Measure">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Indicator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##Relationship -->
+
+    <owl:Class rdf:about="&KPIOWL;Relationship"/>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL##TransportationNetwork -->
+
+    <owl:Class rdf:about="&KPIOWL;TransportationNetwork">
+        <rdfs:subClassOf rdf:resource="&KPIOWL;Measure"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#AvgNetworkAge -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;AvgNetworkAge">
+        <rdf:type rdf:resource="&KPIOWL;Measure"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;Breakdowns"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;LeaksInDistributionNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;LeaksInTransportationNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;LeaksInWaterConnections"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#Breakdowns -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;Breakdowns">
+        <rdf:type rdf:resource="&KPIOWL;Measure"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;WaterLost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#ConsumptionIndex -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;ConsumptionIndex">
+        <rdf:type rdf:resource="&KPIOWL;Measure"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;WaterLost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#ImproveNetworkEfficiency -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;ImproveNetworkEfficiency">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#IncreaseLeaksDetected -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;IncreaseLeaksDetected">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalrelcon2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#LeakDetectionEfficiencyInDistributionNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;LeakDetectionEfficiencyInDistributionNetwork">
+        <rdf:type rdf:resource="&KPIOWL;DistributionNetwork"/>
+        <KPIOWL:indicatorReverse rdf:resource="&KPIOWL;LeaksInDistributionNetwork"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#LeaksInDistributionNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;LeaksInDistributionNetwork">
+        <rdf:type rdf:resource="&KPIOWL;DistributionNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;WaterLost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#LeaksInTransportationNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;LeaksInTransportationNetwork">
+        <rdf:type rdf:resource="&KPIOWL;TransportationNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;WaterLost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#LeaksInWaterConnections -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;LeaksInWaterConnections">
+        <rdf:type rdf:resource="&KPIOWL;ConnectionNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;WaterLost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MaintainAHealthyDistributionNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MaintainAHealthyDistributionNetwork">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeBreakdowns -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeBreakdowns">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalrelcon1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeLeaks -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeLeaks">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalrelcon1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeLeaksInDistributionNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeLeaksInDistributionNetwork">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeLeaksInTransportationNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeLeaksInTransportationNetwork">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeLeaksInWaterConnections -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeLeaksInWaterConnections">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeNaturalLeaksInDistributionNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeNaturalLeaksInDistributionNetwork">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeNaturalLeaksInTransportationNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeNaturalLeaksInTransportationNetwork">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeNaturalLeaksInWaterConnections -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeNaturalLeaksInWaterConnections">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#MinimizeWaterLost -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;MinimizeWaterLost">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#NaturalLeaksDivLengthOfDistributionNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;NaturalLeaksDivLengthOfDistributionNetwork">
+        <rdf:type rdf:resource="&KPIOWL;DistributionNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;LeaksInDistributionNetwork"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#NaturalLeaksDivLengthOfTransportionNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;NaturalLeaksDivLengthOfTransportionNetwork">
+        <rdf:type rdf:resource="&KPIOWL;TransportationNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;LeaksInTransportationNetwork"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#NaturalLeaksDivWaterConnections -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;NaturalLeaksDivWaterConnections">
+        <rdf:type rdf:resource="&KPIOWL;ConnectionNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;LeaksInWaterConnections"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#NumberOfWaterConnections -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;NumberOfWaterConnections">
+        <rdf:type rdf:resource="&KPIOWL;ConnectionNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;Breakdowns"/>
+        <KPIOWL:indicatorReverse rdf:resource="&KPIOWL;LeaksInTransportationNetwork"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#PercertangeOfNetworkRenovated -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;PercertangeOfNetworkRenovated">
+        <rdf:type rdf:resource="&KPIOWL;Measure"/>
+        <KPIOWL:indicatorReverse rdf:resource="&KPIOWL;AvgNetworkAge"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#PopulationDivNetworkLength -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;PopulationDivNetworkLength">
+        <rdf:type rdf:resource="&KPIOWL;Measure"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;WaterLost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#ReducePowerSupplyCosts -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;ReducePowerSupplyCosts">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#RenovateOldNetworkParts -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;RenovateOldNetworkParts">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalreldec1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#RenovateSupplyNetwork -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;RenovateSupplyNetwork">
+        <rdf:type rdf:resource="&KPIOWL;Goal"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalrelcon2"/>
+        <KPIOWL:hasRelationship rdf:resource="&KPIOWL;goalrelcon3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#WaterConnectionsDivNetworkLength -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;WaterConnectionsDivNetworkLength">
+        <rdf:type rdf:resource="&KPIOWL;ConnectionNetwork"/>
+        <KPIOWL:indicatorDirect rdf:resource="&KPIOWL;Breakdowns"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#WaterLost -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;WaterLost">
+        <rdf:type rdf:resource="&KPIOWL;Measure"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#goalrelcon1 -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;goalrelcon1">
+        <rdf:type rdf:resource="&KPIOWL;Contribution"/>
+        <KPIOWL:goalDirect rdf:resource="&KPIOWL;MinimizeWaterLost"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#goalrelcon2 -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;goalrelcon2">
+        <rdf:type rdf:resource="&KPIOWL;Contribution"/>
+        <KPIOWL:goalDirect rdf:resource="&KPIOWL;MinimizeLeaks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#goalrelcon3 -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;goalrelcon3">
+        <rdf:type rdf:resource="&KPIOWL;Contribution"/>
+        <KPIOWL:goalDirect rdf:resource="&KPIOWL;MinimizeBreakdowns"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#goalreldec1 -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;goalreldec1">
+        <rdf:type rdf:resource="&KPIOWL;Decomposition"/>
+        <KPIOWL:withGoal rdf:resource="&KPIOWL;RenovateSupplyNetwork"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://khaos.uma.es/ontologies/lucentia/KPIOWL#goalreldec2 -->
+
+    <owl:NamedIndividual rdf:about="&KPIOWL;goalreldec2">
+        <rdf:type rdf:resource="&KPIOWL;Decomposition"/>
+        <KPIOWL:withGoal rdf:resource="&KPIOWL;MinimizeLeaks"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#i1">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#i2">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#o">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&KPIOWL;inconsistent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#i2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&KPIOWL;TransportationNetwork"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#i2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&KPIOWL;indicatorReverse"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#i2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&KPIOWL;DistributionNetwork"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&KPIOWL;redundant"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#i2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&KPIOWL;monitors"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#o"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest rdf:resource="&rdf;nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="&KPIOWL;monitors"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#i2"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#o"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="&KPIOWL;inconsistent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#i2"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="&KPIOWL;DistributionNetwork"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#i2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="&KPIOWL;TransportationNetwork"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="&KPIOWL;indicatorDirect"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#i1"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#i2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
