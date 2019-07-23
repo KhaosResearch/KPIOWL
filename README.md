@@ -4,9 +4,11 @@ A key challenge in current Business Analytics (BA) is the selection of suitable 
 
 ## Summary of features
 KPIOWL.owl contains the following features:
-1.	A semantic approach to represent and consolidate BIG DATA workflows is proposed.
-2.	An OWL Ontology and SWRL rules are developed for reasoning tasks in BIG DATA.
-3.	The proposal is validated with real-world knowledge workflows base of BIG DATA.
+1.	KPIOWL semantic approach is proposed to formally conceptualize KPI selection model
+2.	An OWL Ontology and SWRL rules are developed for reasoning on KPI modelling tasks
+3.	The proposal is validated on real-world use cases about water supply management
+4.	Obtained semantized data successfully supports in KPI and KRI selection strategy 
+5.	KPIWOL is useful for enriching Business Intelligence modelling processes
 
 ## WebProtégé
 KPIOWL.owl is available on  WebProtégé
